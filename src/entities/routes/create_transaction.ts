@@ -26,6 +26,7 @@ router.post("/api/client/:clientId/transaction", async (req, res) => {
       client.balance += amount
    } else if (type === TransactionTypes.WITHDRAW) {
       client.balance = client.balance - amount
+      // client.balance -= amount
    }
 
    await client.save()
